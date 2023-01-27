@@ -1,0 +1,16 @@
+Ban command
+
+
+world.events.tick.subscribe(() => {
+    for (const player of world.getPlayers()) {
+        if (player.hasTag("banned")) {
+            if (player.name.includes(" ")) player.runCommandAsync(`kick ${player.name} you are banned bozo`);
+            else player.runCommandAsync(`kick "${player.name}" you are banned bozo`);
+        };
+    };
+});
+
+
+
+
+
